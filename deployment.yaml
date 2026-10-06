@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sbt9-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sbt9-app
+  template:
+    metadata:
+      labels:
+        app: sbt9-app
+    spec:
+      containers:
+        - name: sbt9-app
+          image: agarwalt2332/sbt9-app:1.0
+          ports:
+            - containerPort: 8081
